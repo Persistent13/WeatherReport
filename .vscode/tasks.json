@@ -2,40 +2,30 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
-            "command": "dotnet",
-            "type": "process",
+            "label": "firestoredb",
+            "command": "gcloud",
+            "type": "shell",
             "args": [
-                "build",
-                "${workspaceFolder}/weatherreport.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
+                "beta",
+                "emulators",
+                "firestore",
+                "start",
+                "--host-port=0.0.0.0:8338"
+            ]
         },
         {
-            "label": "publish",
+            "label": "run",
             "command": "dotnet",
             "type": "process",
             "args": [
-                "publish",
-                "${workspaceFolder}/weatherreport.csproj",
-                "/property:GenerateFullPaths=true",
-                "/consoleloggerparameters:NoSummary"
-            ],
-            "problemMatcher": "$msCompile"
-        },
-        {
-            "label": "watch",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "watch",
                 "run",
                 "--project",
                 "${workspaceFolder}/weatherreport.csproj"
             ],
-            "problemMatcher": "$msCompile"
+            "problemMatcher": "$msCompile",
+            "dependsOn": [
+                "firestoredb"
+            ]
         }
     ]
 }

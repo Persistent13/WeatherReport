@@ -8,10 +8,14 @@
             "name": ".NET Core Launch (console)",
             "type": "coreclr",
             "request": "launch",
-            "preLaunchTask": "build",
+            "preLaunchTask": "run",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceFolder}/bin/Debug/net6.0/weatherreport.dll",
             "args": [],
+            "env": {
+                "FIRESTORE_EMULATOR_HOST": "localhost:8338",
+                "GCP_PROJECT_ID": "weather-report-reporter"
+            },
             "cwd": "${workspaceFolder}",
             // For more information about the 'console' field, see https://aka.ms/VSCode-CS-LaunchJson-Console
             "console": "internalConsole",

@@ -17,4 +17,8 @@
 global using System.ServiceModel.Syndication;
 global using System.Xml;
 
+global using Google.Api.Gax;
+global using Google.Cloud.Firestore;
+
 global using static System.DateTime;
+global using static System.Environment;
